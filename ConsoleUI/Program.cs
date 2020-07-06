@@ -46,7 +46,65 @@ namespace ConsoleUI
 
             // Call each of the drive methods for one car and one motorcycle
 
-            #endregion            
+            List<Vehicle> vehicle = new List<Vehicle>();
+
+             Car gavinCar = new Car();
+            gavinCar.hasTrunk = true;
+            gavinCar.make = "Buic";
+            gavinCar.model = "Laceern";
+            gavinCar.year = 2008;
+
+            Motorcycle gavinsMot = new Motorcycle();
+            gavinsMot.hasSideCart = false;
+            gavinsMot.make = "Harly";
+            gavinsMot.model = "Davison";
+            gavinsMot.year = 2000;
+
+            Car danniesCar = new Car();
+            danniesCar.hasTrunk = true;
+            danniesCar.year = 2012;
+            danniesCar.make = "Ford";
+            danniesCar.model = "Fushion";
+
+            Car bresCar = new Car();
+            bresCar.hasTrunk = true;
+            bresCar.year = 1999;
+            bresCar.make = "Chevy";
+            bresCar.model = "Cruiz";
+
+            gavinsMot.DriveVirtual();
+            gavinCar.DriveAbstract();
+            danniesCar.DriveAbstract();
+            bresCar.DriveAbstract();
+
+            vehicle.Add(gavinCar);
+            vehicle.Add(gavinsMot);
+            vehicle.Add(danniesCar);
+            vehicle.Add(bresCar);
+            Console.WriteLine("--------------------------------------------");
+
+            foreach (var item in vehicle)
+            {
+                Console.WriteLine($"Make: {item.make} , Model: {item.model} ,  Year: {item.year}  ");
+                item.DriveAbstract();
+                item.DriveVirtual();
+                Console.WriteLine("//////////////////////////////////////");
+             
+            }
+            {
+
+            }
+
+
+
+
+
+
+
+
+
+
+            #endregion
             Console.ReadLine();
         }
     }
